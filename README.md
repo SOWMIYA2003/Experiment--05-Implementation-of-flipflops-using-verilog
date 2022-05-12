@@ -105,7 +105,19 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ⇒Q(t+1)=T⊕Q(t)
 
 ### Procedure
-/* write all the steps invloved */
+```
+Step 1:
+Module Declaration. module is a keywords defined in Verilog .
+Step 2:
+Input-Output Delecaration. There are four flipflops
+1.SR Flipflop has 2 inputs along with clock.
+2.JK Flipflop has 2 inputs along with clock.
+3.D Flipflop has one input and  a clock.
+4.T Flipflop has one input and  a clock.
+Step 3:
+Use wire declaration and assign statements to define the functionality of logic circuits.
+Step 4:
+Ending module. endmodule is a keywords defined in Verilog.
 
 
 
