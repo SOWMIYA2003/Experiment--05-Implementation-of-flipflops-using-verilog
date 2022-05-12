@@ -124,7 +124,7 @@ Step 4:
 Ending module. endmodule is a keywords defined in Verilog.
 
 
-
+```
 ### PROGRAM 
 ```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
