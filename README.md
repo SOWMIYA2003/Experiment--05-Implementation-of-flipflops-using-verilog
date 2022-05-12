@@ -1,7 +1,10 @@
 # Experiment--05-Implementation-of-flipflops-using-verilog
-### AIM: To implement all the flipflops using verilog and validating their functionality using their functional tables
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
+### AIM: 
+To implement all the flipflops using verilog and validating their functionality using their functional tables
+### HARDWARE REQUIRED:  – 
+PC, Cyclone II , USB flasher
+### SOFTWARE REQUIRED:  
+ Quartus prime
 ### THEORY 
 SR Flip-Flop
 SR flip-flop operates with only positive clock transitions or negative clock transitions. Whereas, SR latch operates with enable signal. The circuit diagram of SR flip-flop is shown in the following figure.
@@ -109,10 +112,60 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: Sowmiya N
+RegisterNumber:  212221230106
 */
+### SR Flip Flop:
+```
+module SR(S,R,C,Q,Qbar);
+input S,R,C;
+output Q,Qbar;
+wire X,Y;
+nand (X,S,C);
+nand (Y,R,C);
+nand (Q,X,Qbar);
+nand (Qbar,Y,Q);
+endmodule
+```
+### JK Flip Flop:
+```
+module JK (J,K,C,Q,Qbar);
+input J,K,C;
+output Q,Qbar;
+wire P,S;
+nand(P,Qbar,J,C);
+nand(S,C,K,Q);
+nand(Q,P,Qbar);
+nand(Qbar,S,Q);
+endmodule
+```
+### D Flip Flop:
+```
+module DF (D,C,Q,Qbar);
+input D,C;
+output Q,Qbar;
+assign Dbar=~D;
+wire P,S;
+nand(P,D,C);
+nand(S,C,Dbar);
+nand(Q,P,Qbar);
+nand(Qbar,S,Q);
+endmodule
 
+```
+### T Flip Flop:
+```
+module TF (T,C,Q,Qbar);
+input T,C;
+output Q,Qbar;
+wire P,S;
+nand(P,T,C,Qbar);
+nand(S,T,C,Q);
+nand(Q,P,Qbar);
+nand(Qbar,S,Q);
+endmodule
+
+```
 
 
 
@@ -121,7 +174,16 @@ RegisterNumber:
 ### RTL LOGIC FOR FLIPFLOPS 
 
 
+### SR Flip Flop:
 
+![op](./1a.png)
+
+### JK Flip Flop:
+![op](./JK1.png)
+### D Flip Flop:
+![op](./0a.png)
+### T Flip Flop:
+![op](./TF1.png)
 
 
 
@@ -131,10 +193,19 @@ RegisterNumber:
 ### TIMING DIGRAMS FOR FLIP FLOPS 
 
 
+### SR Flip Flop:
+![op](./1b.png)
+### JK Flip Flop:
 
+![op](./JK3.png)
+### D Flip Flop:
+![op](./0b.png)
+### T Flip Flop:
+![op](./TF2.png)
 
 
 
 
 
 ### RESULTS 
+Implementation of all the flipflops using verilog is done and their functionality  is been validated using their functional tables.
